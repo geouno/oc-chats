@@ -1,0 +1,24 @@
+{
+  "name": "oc-chats",
+  "version": "1.0.0",
+  "description": "Easy frictionless chats with your computer, powered by OpenCode.",
+  "license": "AGPL-3.0",
+  "author": "geouno",
+  "repository": { "type": "git", "url": "https://github.com/geouno/oc-chats" },
+  "type": "module",
+  "bin": { "chats": "./bin/chats" },
+  "files": ["bin/chats", "README.md", "LICENSE"],
+  "keywords": ["cli", "ai", "opencode", "chat", "assistant"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "bun build bin/chats.ts --outfile bin/chats --target node && chmod +x bin/chats",
+    "dev": "bun run bin/chats.ts",
+    "format": "biome format --write ."
+  },
+  "dependencies": { "@clack/prompts": "^1.0.1", "picocolors": "^1.1.1" },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.2",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
