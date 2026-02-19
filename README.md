@@ -38,11 +38,13 @@ chats resume "my chat"
 
 ```
 ~/.oc-chats/
-├── git/                     # Identity repo for session grouping.
+├── identity-repository/    # Identity repo for session grouping.
 │   └── .git/
-│       └── opencode         # Project ID marker.
-└── .opencode/
-    └── opencode.json        # Permission config.
+│       └── opencode        # Project ID marker.
+└── config/
+    └── opencode/
+        └── opencode.json   # OpenCode configuration,
+                            # e.g., agents, permissions.
 ```
 
 ## Commands

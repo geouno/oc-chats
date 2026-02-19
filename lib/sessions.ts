@@ -1,4 +1,4 @@
-import { opencodeJSON } from "./exec";
+import { opencode } from "./opencode";
 import * as paths from "./paths";
 
 export interface Session {
@@ -11,7 +11,7 @@ export interface Session {
 }
 
 export async function getChatsSessions(): Promise<Session[]> {
-  const sessions = (await opencodeJSON<Session[]>(["session", "list"])) ?? [];
+  const sessions = (await opencode.json<Session[]>(["session", "list"])) ?? [];
   return sessions.filter((s) => s.projectId === paths.PROJECT_ID);
 }
 

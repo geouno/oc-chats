@@ -1,6 +1,5 @@
 import * as p from "@clack/prompts";
-import { spawn } from "child_process";
-import * as paths from "../lib/paths";
+import { opencode } from "../lib/opencode";
 import { cancelSymbol, confirm, selectSession } from "../lib/prompts";
 import { getChatsSessions } from "../lib/sessions";
 
@@ -44,10 +43,7 @@ export default async function (...args: string[]) {
   });
 
   if (shouldResume) {
-    const proc = spawn("opencode", ["-s", selected.id], {
-      cwd: paths.IDENTITY_REPO,
-      stdio: "inherit",
-    });
+    const proc = opencode.spawn(["-s", selected.id]);
     await new Promise<void>((resolve) => proc.on("close", () => resolve()));
   } else {
     p.outro(

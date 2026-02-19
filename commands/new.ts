@@ -1,10 +1,6 @@
-import { spawn } from "child_process";
-import * as paths from "../lib/paths";
+import { opencode } from "../lib/opencode";
 
 export default async function (...args: string[]) {
-  const proc = spawn("opencode", [], {
-    cwd: paths.IDENTITY_REPO,
-    stdio: "inherit",
-  });
+  const proc = opencode.spawn([]);
   await new Promise<void>((resolve) => proc.on("close", () => resolve()));
 }

@@ -1,6 +1,5 @@
 import * as p from "@clack/prompts";
-import { spawn } from "child_process";
-import * as paths from "../lib/paths";
+import { opencode } from "../lib/opencode";
 import { cancelSymbol, selectSession } from "../lib/prompts";
 import {
   findById,
@@ -50,9 +49,6 @@ export default async function (...args: string[]) {
 }
 
 async function openSession(sessionId: string) {
-  const proc = spawn("opencode", ["-s", sessionId], {
-    cwd: paths.IDENTITY_REPO,
-    stdio: "inherit",
-  });
+  const proc = opencode.spawn(["-s", sessionId]);
   await new Promise<void>((resolve) => proc.on("close", () => resolve()));
 }
