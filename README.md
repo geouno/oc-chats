@@ -11,10 +11,10 @@ project sessions.
 ## Quick Start
 
 ```bash
-# Install globally
+# Install globally.
 bun add -g oc-chats
 
-# Set up OC Chats
+# Set up OC Chats.
 chats install
 
 # Start new chat.
@@ -49,12 +49,13 @@ chats resume "my chat"
 
 ## Commands
 
-| Command                 | Description                                       |
-| ----------------------- | ------------------------------------------------- |
-| `install`               | Set up ~/.oc-chats directory and config.          |
-| `new`                   | Start a new chat session.                         |
-| `list`                  | List and select chat sessions with fuzzy search.  |
-| `resume <ID \| prefix>` | Resume a chat by exact ID or prefix match.        |
+| Command                 | Description                                           |
+| ----------------------- | ----------------------------------------------------- |
+| `install`               | Set up ~/.oc-chats directory and config.              |
+| `new`                   | Start a new chat session.                             |
+| `list`                  | List and select chat sessions with fuzzy search.      |
+| `resume <ID \| prefix>` | Resume a chat by exact ID or prefix match.            |
+| `debug opencode <cmd>`  | Debug tools for OpenCode configuration and internals. |
 
 ## Development
 

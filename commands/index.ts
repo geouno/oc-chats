@@ -17,4 +17,8 @@ export const commands: Record<string, CommandHandler> = {
     const { default: cmd } = await import("./resume");
     return cmd(...args);
   },
+  async debug(...args) {
+    const { default: cmd } = await import("./debug");
+    return cmd(...args);
+  },
 };

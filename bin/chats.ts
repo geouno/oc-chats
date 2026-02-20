@@ -11,6 +11,7 @@ if (!handler) {
   console.error("  new      - Start a new chat.");
   console.error("  list     - List and select chat sessions.");
   console.error("  resume   - Resume a chat (by ID or prefix).");
+  console.error("  debug    - Debug tools (opencode, ...).");
   process.exit(1);
 }
 
