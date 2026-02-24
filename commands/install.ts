@@ -31,5 +31,9 @@ export default async function (...args: string[]) {
   );
   s.stop("Git repository initialized.");
 
+  s.start("Creating cache directories.");
+  await fs.mkdir(paths.ASK_REPO_CACHE_DIR, { recursive: true });
+  s.stop("Cache directories created.");
+
   p.outro("OC Chats installed.");
 }
